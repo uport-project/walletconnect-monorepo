@@ -103,6 +103,7 @@ declare module "@walletconnect/types" {
     accounts: string[];
     networkId?: number;
     rpcUrl?: string;
+    auth?: string;
   }
 
   export interface ISessionError {
@@ -212,6 +213,7 @@ declare module "@walletconnect/types" {
     rpcUrl?: string | null;
     peerId?: string | null;
     peerMeta?: IClientMeta | null;
+    auth?: string | null;
   }
 
   export interface IWalletConnectSession {
@@ -297,7 +299,8 @@ declare module "@walletconnect/types" {
   }
 
   export interface ICreateSessionOptions {
-    chainId?: number;
+    chainId?: number | null;
+    authRequest?: string;
   }
 
   export interface IRpcConnection extends NodeJS.EventEmitter {

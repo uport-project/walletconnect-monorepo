@@ -484,6 +484,7 @@ class Connector implements IConnector {
           peerMeta: this.clientMeta,
           chainId: opts && opts.chainId ? opts.chainId : null,
         },
+        opts && opts.authRequest ? opts.authRequest : null,
       ],
     });
 
@@ -518,6 +519,7 @@ class Connector implements IConnector {
       rpcUrl: this.rpcUrl,
       peerId: this.clientId,
       peerMeta: this.clientMeta,
+      auth: sessionStatus.auth,
     };
 
     const response = {
